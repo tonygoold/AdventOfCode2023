@@ -8,6 +8,9 @@ edition = "2021"
 [dependencies]
 regex = "1.10.2"
 
+[profile.release]
+debug = true
+
 [[bin]]
 name = "01a"
 path = "src/bin/01/a.rs"
@@ -31,3 +34,19 @@ path = "src/bin/03/a.rs"
 [[bin]]
 name = "03b"
 path = "src/bin/03/b.rs"
+
+[[bin]]
+name = "04a"
+path = "src/bin/04/a.rs"
+
+[[bin]]
+name = "04b"
+path = "src/bin/04/b.rs"
+
+[[bin]]
+name = "05a"
+path = "src/bin/05/a.rs"
+
+[[bin]]
+name = "05b"
+path = "src/bin/05/b.rs"

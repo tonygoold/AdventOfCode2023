@@ -5,6 +5,7 @@ use std::io::{BufRead, BufReader};
 pub mod cube_bag;
 pub mod grid;
 pub mod point;
+pub mod range_map;
 
 pub fn input_arg() -> String {
     env::args()
