@@ -6,6 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+gcd = "2.3.0"
 regex = "1.10.2"
 
 [profile.release]
@@ -50,3 +51,43 @@ path = "src/bin/05/a.rs"
 [[bin]]
 name = "05b"
 path = "src/bin/05/b.rs"
+
+[[bin]]
+name = "06a"
+path = "src/bin/06/a.rs"
+
+[[bin]]
+name = "06b"
+path = "src/bin/06/b.rs"
+
+[[bin]]
+name = "07a"
+path = "src/bin/07/a.rs"
+
+[[bin]]
+name = "07b"
+path = "src/bin/07/b.rs"
+
+[[bin]]
+name = "08a"
+path = "src/bin/08/a.rs"
+
+[[bin]]
+name = "08b"
+path = "src/bin/08/b.rs"
+
+[[bin]]
+name = "09a"
+path = "src/bin/09/a.rs"
+
+[[bin]]
+name = "09b"
+path = "src/bin/09/b.rs"
+
+[[bin]]
+name = "10a"
+path = "src/bin/10/a.rs"
+
+[[bin]]
+name = "10b"
+path = "src/bin/10/b.rs"

@@ -2,9 +2,14 @@ use std::env;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 
+pub mod camel_cards;
 pub mod cube_bag;
 pub mod grid;
+pub mod map_route;
+pub mod oasis;
+pub mod pipes;
 pub mod point;
+pub mod race;
 pub mod range_map;
 
 pub fn input_arg() -> String {
@@ -32,6 +37,7 @@ pub fn read_uints(path: &str) -> impl Iterator<Item = usize> {
     })
 }
 
+// Reads groups of lines containing one unsigned integer each
 pub fn read_uint_lists(path: &str) -> Vec<Vec<usize>> {
     let vecs: Vec<Vec<usize>> = vec![vec![]];
     read_lines(path).fold(vecs, |mut vecs, line| {
@@ -44,6 +50,24 @@ pub fn read_uint_lists(path: &str) -> Vec<Vec<usize>> {
         };
         vecs
     })
+}
+
+// Reads lines containing a variable number of unsigned integers
+pub fn read_uint_rows(path: &str) -> Vec<Vec<usize>> {
+    read_lines(path).map(|line| {
+        line.split_ascii_whitespace()
+            .map(|n| n.parse::<usize>().expect("Line contained a non-unsigned integer"))
+            .collect()
+    }).collect()
+}
+
+// Reads lines containing a variable number of signed integers
+pub fn read_int_rows(path: &str) -> Vec<Vec<isize>> {
+    read_lines(path).map(|line| {
+        line.split_ascii_whitespace()
+            .map(|n| n.parse::<isize>().expect("Line contained a non-integer"))
+            .collect()
+    }).collect()
 }
 
 pub fn read_uint_grid(path: &str) -> grid::Grid<usize> {

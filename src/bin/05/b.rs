@@ -1,5 +1,3 @@
-use std::time::Instant;
-
 use regex::Regex;
 
 use aoc::{input_arg, read_lines};

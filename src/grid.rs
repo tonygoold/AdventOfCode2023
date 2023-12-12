@@ -28,9 +28,9 @@ impl<T> Grid<T> {
         }
     }
 
-    pub fn map<F>(&self, mut f: F) -> Self
+    pub fn map<F, U>(&self, mut f: F) -> Grid<U>
     where
-        F: FnMut((usize, usize), &T) -> T,
+        F: FnMut((usize, usize), &T) -> U,
     {
         let mut cells = Vec::with_capacity(self.cells.len());
         for y in 0..self.rows {
@@ -39,7 +39,7 @@ impl<T> Grid<T> {
                 cells.push(f((y, x), cell));
             }
         }
-        Self::new_with_cells(cells, self.rows, self.cols)
+        Grid::new_with_cells(cells, self.rows, self.cols)
     }
 
     pub fn iter(&self) -> Iter<T> {
